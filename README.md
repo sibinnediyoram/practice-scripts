@@ -9,7 +9,7 @@ Solution:
 
  $ git clone https://github.com/sibinnediyoram/practice-scripts.git
 
- From the cloned repository copy random_number binary from folder: bin, to /usr/bin or any custom binary location like /home/user/bin which is already added as a $PATH variable. Assign execution permission for the file.
+ From the cloned repository copy random_number binary from folder: bin, to /usr/bin or any custom binary location like /home/user/bin which need to be already added as a $PATH variable. Assign execution permission to the file.
 Then run the binary name from terminal:
     $random_number
 or else you can run the binary from any location as : ./random_number
