@@ -1,0 +1,35 @@
+Imagine a server with the following specs:
+
+● 4 times Intel(R) Xeon(R) CPU E7-4830 v4 @ 2.00GHz
+● 64GB of ram
+● 2 TB HDD disk space
+● 2 x 10Gbit/s nics
+
+The server is used for SSL offloading and proxies around 25000 requests per second. Please
+let us know which metrics are interesting to monitor in that specific case and how would you
+do that? What are the challenges of monitoring this?
+
+We need to consider below metrics for monitoring of ssl offloading server:
+1. Https traffic handling by the server
+2. Open Connections - The number of connections open at the given sample moment
+3. SSL certificate validity
+4. CPU and memory resource utilization
+5. Latency 
+6. Inbound Traffic - The number of bytes sent from external endpoints to configured backends
+7. Outbound Traffic - The number of bytes sent from configured backends to external endpoints
+8. New Connections per second - The number of connections that were created . 
+9. Transactions Per Second:  Primarily gated by the available CPU
+10. Concurrent connections:  Memory is the limiting factor
+11. Bulk throughput:  Dependent upon CPU and the maximum packets per second 
+12. Packet loss, round trip average
+
+Proxy metrics:
+1. Frontend metrics such as client connections and requests
+2. Backend metrics such as availability and health of backend servers
+3. Health metrics that reflect the state of your Proxy setup
+
+
+Challenges:
+1. Figuring out proper threshold value for alerts
+2. Montoring agents should light weight does not affect the actual performance of the server due to resource consumption
+3. Usage of apt metrics which serves the prupose
